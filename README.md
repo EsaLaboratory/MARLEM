@@ -76,6 +76,7 @@ For more advanced usage, create your own environment under the oplem package: `\
 The environment should be gym compatible, i.e., contains the following methods:
 - reset()
 - step()
+  
 And registered in Gym following similar template as in step.2 in **Getting started** section
 
 Contributors
