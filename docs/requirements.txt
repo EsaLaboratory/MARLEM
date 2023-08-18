@@ -1,8 +1,0 @@
-cvxopt
-matplotlib
-numpy
-pandapower
-pandas
-PICOS
-scikit-learn
-scipy
