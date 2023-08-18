@@ -13,7 +13,7 @@ MARL extends the concept of RL and includes multiple agents instead of one:
 <img src="https://github.com/EsaLaboratory/MARLEM/assets/65967906/70691924-c3d1-4b05-893d-ba3fff30ae02.png" alt="MARL_schema" width="500">
 
 In MARLEM, OPLEM plays the role of the environment and epyMARL the agent(s):
-<img src="https://github.com/EsaLaboratory/MARLEM/assets/65967906/ce72c5e2-9039-4e12-a055-172793f6ea09.png" alt="MARLEM_schema" width="500">
+<img src="https://github.com/EsaLaboratory/MARLEM/assets/65967906/ce72c5e2-9039-4e12-a055-172793f6ea09.png" alt="MARLEM_schema" width="600">
 
 Documentation
 -------------
@@ -66,12 +66,14 @@ register(
 )
 ```
 Then run the training:
+
+3. change directory to epymarl directory
    
-3. activate the virtual environment that contains the MARLEM packages
+4. activate the virtual environment that contains the MARLEM packages
    
-4. run the following command:
+5. run the following command:
 ```
-python src/main.py --config=mappo --env-config=gymma with env_args.time_limit=50 env_args.key="oplem.DiscLfmAggPEulv-v0"
+python src/main.py --config=mappo --env-config=gymma with env_args.time_limit=50 env_args.key="oplem.OPLEM_Env-v0"
 ```
 
 Advanced Applications
