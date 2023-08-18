@@ -39,6 +39,8 @@ git clone https://github.com/uoe-agents/epymarl.git
 ```
 pip install -r requirements.txt
 ```
+(modified protobuf and gym versions: gym==0.22.0, protobuf>=3.6.1)
+
 4. install oplem package by running the following
 ```
 pip install git+https://github.com/EsaLaboratory/MARLEM.git
