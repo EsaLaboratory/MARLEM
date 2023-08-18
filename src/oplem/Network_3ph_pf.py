@@ -17,6 +17,7 @@ import matplotlib.pyplot as plt
 from scipy.linalg import block_diag
 import sys, os, time
 import copy
+import importlib.resources
 
 __version__ = "1.0.0"
 
@@ -26,6 +27,8 @@ def strCpx2cpx(X):
         X[i] = complex(x)
         i+=1
     return X
+
+path = importlib.resources.files('oplem')
 
 class Network_3ph:
     """
