@@ -6,13 +6,14 @@ Overview
 Energy System Architecture Lab ESAL's [OPLEM](https://github.com/EsaLaboratory/OPLEM) and Autonomous Agents Research Group's [epyMARL](https://github.com/uoe-agents/epymarl) were interfaced to create MARLEM: a multi-agent reinforcement learning (MARL) tool for training and testing reinforcement learning methods on local energy markets (LEM) designs.
 
 The fundamental structure of an RL system consists of an environment that interacts with an agent system through signals: states, actions and rewards. The schema below shows the general structure of RL:
-![RL_schema](https://github.com/EsaLaboratory/MARLEM/assets/65967906/49608a50-c0d4-495d-ac10-c22eebf2c0fd])
+
+<img src="https://github.com/EsaLaboratory/MARLEM/assets/65967906/49608a50-c0d4-495d-ac10-c22eebf2c0fd.png" alt="RL_schema" width="500">
 
 MARL extends the concept of RL and includes multiple agents instead of one:
-![MARL_schema](https://github.com/EsaLaboratory/MARLEM/assets/65967906/70691924-c3d1-4b05-893d-ba3fff30ae02])
+<img src="https://github.com/EsaLaboratory/MARLEM/assets/65967906/70691924-c3d1-4b05-893d-ba3fff30ae02.png" alt="MARL_schema" width="500">
 
 In MARLEM, OPLEM plays the role of the environment and epyMARL the agent(s):
-![MARLEM_schema](https://github.com/EsaLaboratory/MARLEM/assets/65967906/ce72c5e2-9039-4e12-a055-172793f6ea09])
+<img src="https://github.com/EsaLaboratory/MARLEM/assets/65967906/ce72c5e2-9039-4e12-a055-172793f6ea09.png" alt="MARLEM_schema" width="500">
 
 Documentation
 -------------
@@ -30,16 +31,18 @@ conda create --name <name_env> python
 ```
 and activate it: `conda activate <name_env>`
 
-2. install oplem package and all the epyMARL package dependencies by running the following 
-
-```
-pip install git+https://github.com/EsaLaboratory/MARLEM.git
-```
-3. Locate to the directory which will host the epymarl codebase and clone it:
+2. Locate to the directory which will host the epymarl codebase and clone it:
 ```
 git clone https://github.com/uoe-agents/epymarl.git
 ```
-4. and move to the subfolder epymarl: `cd epymarl/`
+3. Move to the subfolder epymarl: `cd epymarl/` and install the packages dependencies:
+```
+pip install -r requirements.txt
+```
+4. install oplem package by running the following
+```
+pip install git+https://github.com/EsaLaboratory/MARLEM.git
+```
 
 Getting started
 ----------------
@@ -61,12 +64,10 @@ register(
 )
 ```
 Then run the training:
-
-3. change directory to where epyMARL was installed
    
-5. activate the virtual environment that contains the MARLEM packages
+3. activate the virtual environment that contains the MARLEM packages
    
-7. run the following command:
+4. run the following command:
 ```
 python src/main.py --config=mappo --env-config=gymma with env_args.time_limit=50 env_args.key="oplem.DiscLfmAggPEulv-v0"
 ```
