@@ -3,3 +3,4 @@ from oplem.Assets import *
 from oplem.Market import *
 from oplem.Network_3ph_pf import * 
 from oplem.Participant import * 
+from oplem.oplem_env import OPLEM_Env
