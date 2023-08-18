@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import pickle
 from datetime import datetime
+import importlib.resources
 
 ##import open system modules
 from oplem.Network_3ph_pf import Network_3ph
@@ -36,8 +37,8 @@ class OPLEM_Env(gym.Env):
         ### STEP 0: Load Data
         #######################################
         #### 1) wholesale data
-        parent_path = "Data"
-        prices_path = os.path.join(parent_path, "gbelec_apxhrdaaprice.csv")
+        parent_path = importlib.resources.files('oplem').joinpath('Data')
+        prices_path = parent_path.joinpath('gbelec_apxhrdaaprice.csv')
         df = pd.read_csv(prices_path)  #2017-2021 6-12 2018-20211 1-5
         df['DateAndTime'] = pd.to_datetime(df['Unnamed: 0'], format="%d/%m/%Y %H:%M")
         df = df.set_index('DateAndTime')
@@ -131,7 +132,6 @@ class OPLEM_Env(gym.Env):
         #cpv_locs = [55,56,57]
         P_cpv_nom = 500 #power rating of the PV generation
         for i in range(N_cpv):
-            print('check for cpv bus:',cpv_bus_names)
             load_buses = np.append(load_buses,np.where(network.bus_df['name']==cpv_bus_names[i])[0][0])
             load_phases.append(np.arange(self.N_phases))
             N_load_bus_phases += self.N_phases
@@ -165,6 +165,7 @@ class OPLEM_Env(gym.Env):
         self.n_agents = len(self.pv_assets)
         self.action_space = [spaces.Discrete(5)]*len(self.pv_assets)       
         
+        max_bound = 0
         #obs = [t, inflexible_load, PVmax, Pagg, Eagg, price] for PV
         pv_low  = np.concatenate((np.array([0,-np.inf, -P_cpv_nom]), np.array([-np.inf]*self.interval), [0], np.array([0]*self.interval)))
         pv_high = np.concatenate((np.array([T_ems/self.dt_ems, np.inf, 0]), np.array([np.inf]*self.interval), [max_bound], np.array([np.inf]*self.interval)) )       
