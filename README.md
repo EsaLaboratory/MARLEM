@@ -60,8 +60,8 @@ To train this environment, you have first to register it with gym.
 2. Copy the following into the `__init__.py` file:
 ```
 register(
-    id="DiscLfmAggPEulv-v0",
-    entry_point="oplem:DiscLfmLvAggPEnv",
+    id="OPLEM_Env-v0",
+    entry_point="oplem:OPLEM_Env",
     kwargs={'network_type':'eulv_reduced'},
 )
 ```
