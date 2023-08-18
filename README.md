@@ -81,8 +81,10 @@ For more advanced usage, create your own environment under the oplem package: `\
 The environment should be gym compatible, i.e., contains the following methods:
 - reset()
 - step()
-  
-And registered in Gym following similar template as in step.2 in **Getting started** section
+
+Add it to the `__init__py` file of the package: `from oplem.\[your_env_name\] import \[class_name\]`
+
+And registered it in Gym following similar template as in step.2 in **Getting started** section
 
 Contributors
 ------------
