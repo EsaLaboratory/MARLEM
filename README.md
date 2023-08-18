@@ -6,13 +6,13 @@ Overview
 Energy System Architecture Lab ESAL's [OPLEM](https://github.com/EsaLaboratory/OPLEM) and Autonomous Agents Research Group's [epyMARL](https://github.com/uoe-agents/epymarl) were interfaced to create MARLEM: a multi-agent reinforcement learning (MARL) tool for training and testing reinforcement learning methods on local energy markets (LEM) designs.
 
 The fundamental structure of an RL system consists of an environment that interacts with an agent system through signals: states, actions and rewards. The schema below shows the general structure of RL:
-![RL_schema](https://github.com/EsaLaboratory/MARLEM/assets/65967906/49608a50-c0d4-495d-ac10-c22eebf2c0fd|width=75px])
+![RL_schema](https://github.com/EsaLaboratory/MARLEM/assets/65967906/49608a50-c0d4-495d-ac10-c22eebf2c0fd])
 
 MARL extends the concept of RL and includes multiple agents instead of one:
-![MARL_schema](https://github.com/EsaLaboratory/MARLEM/assets/65967906/70691924-c3d1-4b05-893d-ba3fff30ae02|width=75px])
+![MARL_schema](https://github.com/EsaLaboratory/MARLEM/assets/65967906/70691924-c3d1-4b05-893d-ba3fff30ae02])
 
 In MARLEM, OPLEM plays the role of the environment and epyMARL the agent(s):
-![MARLEM_schema](https://github.com/EsaLaboratory/MARLEM/assets/65967906/ce72c5e2-9039-4e12-a055-172793f6ea09|width=75px])
+![MARLEM_schema](https://github.com/EsaLaboratory/MARLEM/assets/65967906/ce72c5e2-9039-4e12-a055-172793f6ea09])
 
 Documentation
 -------------
@@ -60,11 +60,13 @@ register(
     kwargs={'network_type':'eulv_reduced'},
 )
 ```
+Then run the training:
 
-Then run the training: 
 3. change directory to where epyMARL was installed
-4. activate the virtual environment that contains the MARLEM packages
-5. run the following command: 
+   
+5. activate the virtual environment that contains the MARLEM packages
+   
+7. run the following command:
 ```
 python src/main.py --config=mappo --env-config=gymma with env_args.time_limit=50 env_args.key="oplem.DiscLfmAggPEulv-v0"
 ```
