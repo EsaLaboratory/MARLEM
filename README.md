@@ -56,7 +56,7 @@ We have developed an environment in OPLEM, which is a reduced european low volta
 - Reward: the total revenue - the total violations
 
 To train this environment, you have first to register it with gym.
-1. In the gym folder under your virtual environment: `\[path to Anaconda\]\Anaconda\envs\\[your_env\]\Lib\site-packages\gym\envs`
+1. In the gym folder under your virtual environment: `[path to Anaconda]\Anaconda\envs\[your_env]\Lib\site-packages\gym\envs`
 2. Copy the following into the `__init__.py` file:
 ```
 register(
@@ -78,13 +78,13 @@ python src/main.py --config=mappo --env-config=gymma with env_args.time_limit=50
 
 Advanced Applications
 ---------------------
-For more advanced usage, create your own environment under the oplem package: `\[path to Anaconda\]\Anaconda\envs\\[your_env\]\Lib\site-packages\oplem`
+For more advanced usage, create your own environment under the oplem package: `[path to Anaconda]\Anaconda\envs\[your_env]\Lib\site-packages\oplem`
 
 The environment should be gym compatible, i.e., contains the following methods:
 - reset()
 - step()
 
-Add it to the `__init__py` file of the package: `from oplem.\[your_env_name\] import \[class_name\]`
+Add it to the `__init__py` file of the package: `from oplem.[your_env_name] import [class_name]`
 
 And registered it in Gym following similar template as in step.2 in **Getting started** section
 
